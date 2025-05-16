@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "Medium Link Redirector",
+    "version": "1.0",
+    "description": "Redirects Medium links to a custom URL when clicking the small circle.",
+    "permissions": [
+        "activeTab"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon-16.png",
+            "48": "icon-48.png",
+            "128": "icon-128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://medium.com/*",
+                "https://*.medium.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "icons": {
+        "16": "icon-16.png",
+        "48": "icon-48.png",
+        "128": "icon-128.png"
+    }
+}
